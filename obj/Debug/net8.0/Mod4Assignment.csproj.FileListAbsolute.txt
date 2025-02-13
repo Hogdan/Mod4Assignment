@@ -1,0 +1,14 @@
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\bin\Debug\net8.0\Mod4Assignment.exe
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\bin\Debug\net8.0\Mod4Assignment.deps.json
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\bin\Debug\net8.0\Mod4Assignment.runtimeconfig.json
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\bin\Debug\net8.0\Mod4Assignment.dll
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\bin\Debug\net8.0\Mod4Assignment.pdb
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.AssemblyInfoInputs.cache
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.AssemblyInfo.cs
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.csproj.CoreCompileInputs.cache
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.dll
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\refint\Mod4Assignment.dll
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.pdb
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.genruntimeconfig.cache
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\ref\Mod4Assignment.dll
