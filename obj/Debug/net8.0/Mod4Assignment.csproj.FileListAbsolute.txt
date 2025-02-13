@@ -12,3 +12,4 @@ C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Deb
 C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.pdb
 C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.genruntimeconfig.cache
 C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\ref\Mod4Assignment.dll
+C:\Users\8cutt\Documents\WCTC\2025\DotNetDatabase\Module4\Mod4Assignment\obj\Debug\net8.0\Mod4Assignment.sourcelink.json
