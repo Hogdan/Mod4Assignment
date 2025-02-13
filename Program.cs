@@ -2,40 +2,46 @@
 string file = "mario.csv";
 string? choice;
 
+// Exception handling
 if (!File.Exists(file))
 {
     Console.WriteLine("Error 404: File does not exist");
-
 }
 else
 {
+    // Parallel lists for each column in the csv file
     List<UInt64> ids = [];
     List<string> names = [];
     List<string> descriptions = [];
     List<string> species = [];
     List<string> firstAppearances = [];
     List<string> yearsCreated = [];
-    try {
-    StreamReader sr = new(file);
-    sr.ReadLine();
-    while (!sr.EndOfStream)
+
+    // Read data from file and populate lists
+    try
     {
-        string? line = sr.ReadLine();
-        string[] arr = string.IsNullOrEmpty(line) ? [] : line.Split(',');
-        ids.Add(UInt64.Parse(arr[0]));
-        names.Add(arr[1]);
-        descriptions.Add(arr[2]);
-        species.Add(arr[3]);
-        firstAppearances.Add(arr[4]);
-        yearsCreated.Add(arr[5]);
+        StreamReader sr = new(file);
+        sr.ReadLine();
+        while (!sr.EndOfStream)
+        {
+            string? line = sr.ReadLine();
+            string[] arr = string.IsNullOrEmpty(line) ? [] : line.Split(',');
+            ids.Add(UInt64.Parse(arr[0]));
+            names.Add(arr[1]);
+            descriptions.Add(arr[2]);
+            species.Add(arr[3]);
+            firstAppearances.Add(arr[4]);
+            yearsCreated.Add(arr[5]);
+        }
+        sr.Close();
     }
-    sr.Close();
-    }
+    // Catch exceptions
     catch (Exception e)
     {
         Console.WriteLine("Error: {0}", e.Message);
     }
 
+    // menu options
     do
     {
         Console.WriteLine("1) Display all characters.");
@@ -46,66 +52,66 @@ else
 
         if (choice == "1")
         {
-            // read data from file
-            if (File.Exists(file))
+            // display all characters
+            for (int i = 0; i < ids.Count; i++)
             {
-                // accumulator needed for count
-                int count = 0;
-                // read data from file
-                StreamReader sr = new(file);
-                // read the header
-                sr.ReadLine();
-                while (!sr.EndOfStream)
-                {
-                    string? line = sr.ReadLine();
-                    // convert string to array
-                    string[] arr = string.IsNullOrEmpty(line) ? [] : line.Split(',');
-                    // display array data
-                    Console.WriteLine("ID: {0}", arr[0]);
-                    Console.WriteLine("Name: {0}", arr[1]);
-                    Console.WriteLine("Description: {0}", arr[2]);
-                    Console.WriteLine("Species: {0}", arr[3]);
-                    Console.WriteLine("First Appearance: {0}", arr[4]);
-                    Console.WriteLine("Year Created: {0}\n", arr[5]);
-                    // add to accumulator
-                    count += 1;
-                }
-                sr.Close();
-                Console.WriteLine("{0} Characters saved to file", count);
-            }
-            else
-            {
-                Console.WriteLine("File does not exist");
+                Console.WriteLine("ID: {0}", ids[i]);
+                Console.WriteLine("Name: {0}", names[i]);
+                Console.WriteLine("Description: {0}", descriptions[i]);
+                Console.WriteLine("Species: {0}", species[i]);
+                Console.WriteLine("First Appearance: {0}", firstAppearances[i]);
+                Console.WriteLine("Year Created: {0}", yearsCreated[i]);
+                Console.WriteLine();
             }
         }
         else if (choice == "2")
         {
+            // add a character
             UInt64 id = ids.Count > 0 ? ids.Max() + 1 : 1;
             Console.WriteLine("Name?");
             string? name = Console.ReadLine();
-            Console.WriteLine("Description?");
-            string? desc = Console.ReadLine();
-            Console.WriteLine("Species?");
-            string? spec = Console.ReadLine();
-            Console.WriteLine("First Appearance?");
-            string? fApp = Console.ReadLine();
-            Console.WriteLine("Year Created?");
-            string? yCtd = Console.ReadLine();
 
-            StreamWriter sw = new(file, append: true);
-            sw.WriteLine("{0},{1},{2},{3},{4},{5}", id, name, desc, spec, fApp, yCtd);
-            sw.Close();
+            // more exception handling
+            if (!string.IsNullOrEmpty(name))
+            {
+                // .. is the range operator that was suggested by the compiler
+                List<string> lowerCaseNames = [.. names.Select(n => n.ToLower())];
+                if (lowerCaseNames.Contains(name.ToLower()))
+                {
+                    Console.WriteLine("Error: Name already exists");
+                }
+                else
+                {
+                    Console.WriteLine("Description?");
+                    string? desc = Console.ReadLine();
+                    Console.WriteLine("Species?");
+                    string? spec = Console.ReadLine();
+                    Console.WriteLine("First Appearance?");
+                    string? fApp = Console.ReadLine();
+                    Console.WriteLine("Year Created?");
+                    string? yCtd = Console.ReadLine();
 
-            ids.Add(id);
-            // ?? is the null coalescing operator I just discovered.
-            // It returns the left-hand operand if the operand is not null; otherwise it returns the right hand operand.
-            names.Add(name ?? "");
-            descriptions.Add(desc ?? "");
-            species.Add(spec ?? "");
-            firstAppearances.Add(fApp ?? "");
-            yearsCreated.Add(yCtd ?? "");
+                    StreamWriter sw = new(file, append: true);
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5}", id, name, desc, spec, fApp, yCtd);
+                    sw.Close();
 
-            Console.WriteLine("Character added successfully");
+                    ids.Add(id);
+                    // ?? is the null coalescing operator I just discovered.
+                    // It returns the left-hand operand if the operand is not null; otherwise it returns the right hand operand.
+                    names.Add(name ?? "");
+                    descriptions.Add(desc ?? "");
+                    species.Add(spec ?? "");
+                    firstAppearances.Add(fApp ?? "");
+                    yearsCreated.Add(yCtd ?? "");
+
+                    Console.WriteLine("{0} added successfully", name);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: Name cannot be empty");
+            }
         }
+
     } while (choice == "1" || choice == "2");
 }
