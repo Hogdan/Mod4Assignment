@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mod4Assignment")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+658df2f3e74a894e8b43588e45eed0abce29bf2e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48185305071c9b4407d8e7631bfbcae67ed286e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mod4Assignment")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mod4Assignment")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
